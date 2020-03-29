@@ -25,6 +25,31 @@ module.exports = {
         use: [ 'html-loader' ]
       },
       {
+        // .svg 파일을 만나면
+        test: /\.svg$/,
+        // file-loader를 사용해라.
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'images/[hash]-[name].[ext]'
+          }
+        }
+      },
+      {
+        // .png 파일 혹은 jp(e?)g 파일을 만나면
+        test: /\.(png|jp(e*))g$/,
+        use: {
+          // url-loader를 사용하는데,
+          loader: 'url-loader',
+          options: {
+            // limit 8000 (8000개까지 허용한다)
+            limit: 8000,
+            // 이름양식은 images 폴더 안에, 블라블라-이름.jpeg(혹은 png)로 저장한다.
+            name: 'images/[hash]-[name].[ext]'
+          }
+        }
+      },
+      {
         // 파일을 읽을때, 테스트를 할꺼야. 이 파일이 .css 파일인 지
         // regular expression (정규 표현식 / 유효성 검사)
         test: /\.css$/i,
