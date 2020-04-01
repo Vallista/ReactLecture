@@ -30,7 +30,9 @@
     "url-loader": "^4.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2"
   },
   "dependencies": {
     "lodash": "^4.17.15",

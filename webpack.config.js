@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 
@@ -52,9 +51,25 @@ module.exports = {
       {
         // 파일을 읽을때, 테스트를 할꺼야. 이 파일이 .css 파일인 지
         // regular expression (정규 표현식 / 유효성 검사)
-        test: /\.css$/i,
+        test: /\.s?css$/,
         // 읽었는데 얘가 css 파일이야 그러면 사용할꺼야(use) 배열 안에 있는 애들을
-        use: [ MiniCSSExtractPlugin.loader, 'css-loader' ]
+        oneOf: [
+          {
+            // module이냐 아니냐를 체크
+            test: /\.module.s?css$/,
+            use: [
+              MiniCSSExtractPlugin.loader,
+              {
+                loader: 'css-loader',
+                options: { modules: true }
+              },
+              'sass-loader'
+            ]
+          },
+          {
+            use: [ MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader' ]
+          }
+        ]
       },
       {
         // 파일을 읽을 때, mjs 파일이거나 (js 혹은 jsx) 파일일 때

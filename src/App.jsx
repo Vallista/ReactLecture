@@ -12,9 +12,11 @@ import BookMarkIcon from './assets/bookmark.svg'
 import ListIcon from './assets/list.svg'
 import MoreIcon from './assets/more.svg'
 
+import './app.css'
+
 const App = () => {
   return (
-    <div>
+    <div className='app'>
       <Sidebar
         titleImg={TwitterBird}
         list={[
