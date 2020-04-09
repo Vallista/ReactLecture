@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Button from '../Button'
+
 import styles from './index.module.scss'
 
 const InputTwit = ({ profile }) => {
@@ -12,7 +14,7 @@ const InputTwit = ({ profile }) => {
 
       <div className={styles.textBox}>
         <div className={styles.inputBox}>
-          <textarea className={styles.textarea} />
+          <textarea className={styles.textarea} placeholder='무슨 일이 일어나고 있나요?' />
         </div>
 
         <div className={styles.optionals}>
@@ -27,9 +29,9 @@ const InputTwit = ({ profile }) => {
               <div className={styles.gaugeArea} />
               <div className={styles.scaleUp} />
             </div>
-            <button type='button' className={styles.twitButton}>
+            <Button type='button' className={styles.twitButton}>
               트윗
-            </button>
+            </Button>
           </div>
         </div>
       </div>

@@ -1,0 +1,57 @@
+.tweetList {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px 0 0 0;
+  border-top: 10px solid rgb(56, 68, 77);
+
+  & .tweet {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    border-bottom: 1px solid rgb(56, 68, 77);
+    padding: 10px;
+
+    & .profile {
+      width: 50px;
+      height: 50px;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+      }
+    }
+
+    & .contents {
+      width: calc(100% - 50px);
+      box-sizing: border-box;
+      padding-left: 12px;
+
+      & .header {
+        & span {
+          color: rgb(136, 153, 166);
+          margin-right: 4px;
+        }
+
+        & span:first-child {
+          color: white;
+        }
+      }
+
+      & .description {
+        margin: 4px 0 12px 0;
+        color: white;
+        font-size: 14px;
+      }
+
+      & .footer {
+      }
+    }
+  }
+
+  & .tweet:last-child {
+    border-bottom: 0;
+  }
+}

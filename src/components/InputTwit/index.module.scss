@@ -1,0 +1,57 @@
+.default {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 10px 15px 10px 15px;
+
+  // & <- 나 자신
+  & .profile {
+  }
+
+  & .textBox {
+    width: 100%;
+
+    & .inputBox {
+      width: 100%;
+      height: auto;
+      box-sizing: border-box;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      & .textarea {
+        width: 100%;
+        height: auto;
+        min-height: 24px;
+        font-size: 20px;
+        outline: none;
+        background-color: transparent;
+        border: none;
+        color: white;
+      }
+    }
+
+    & .optionals {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      & .leftArea {
+      }
+
+      & .rightArea {
+        & .typoOptions {
+          & .gaugeArea {
+          }
+
+          & .scaleUp {
+          }
+        }
+
+        & .twitButton {
+        }
+      }
+    }
+  }
+}
