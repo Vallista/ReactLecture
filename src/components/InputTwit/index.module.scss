@@ -30,6 +30,17 @@
         border: none;
         color: white;
       }
+
+      & .editorWrapper {
+        width: 100%;
+        height: auto;
+        // min-height: 240px;
+
+        & .editor {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
 
     & .optionals {

@@ -30,6 +30,11 @@
       padding-left: 12px;
 
       & .header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         & span {
           color: rgb(136, 153, 166);
           margin-right: 4px;
@@ -37,6 +42,46 @@
 
         & span:first-child {
           color: white;
+        }
+
+        & .optionWindow {
+          position: absolute;
+          z-index: 50;
+          top: 0;
+          right: 0;
+          box-sizing: border-box;
+          background-color: rgb(21, 32, 43);
+          box-shadow: rgba(136, 153, 166, 0.2) 0px 0px 15px, rgba(136, 153, 166, 0.15) 0px 0px 3px 1px;
+          border-radius: 5px;
+
+          & .optionWindowList {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            & .optionWindowListItem {
+              box-sizing: border-box;
+              padding: 14px;
+
+              & img {
+                margin-right: 10px;
+                width: 12px;
+                height: 12px;
+              }
+
+              & span {
+                font-size: 14px;
+                white-space: nowrap;
+                color: white;
+              }
+
+              &:first-child {
+                & span {
+                  color: red;
+                }
+              }
+            }
+          }
         }
       }
 
